@@ -30,3 +30,25 @@ resource "aws_subnet" "public_1a" {
     Name = "3tier-public-1a"
   }
 }
+
+# Private Subnet (AP層用)
+resource "aws_subnet" "private_ap_1a" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.0.11.0/24"
+  availability_zone = "ap-northeast-1a"
+
+  tags = {
+    Name = "3tier-private-ap-1a"
+  }
+}
+
+# Private Subnet (DB層用)
+resource "aws_subnet" "private_db_1a" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.0.21.0/24"
+  availability_zone = "ap-northeast-1a"
+
+  tags = {
+    Name = "3tier-private-db-1a"
+  }
+}
