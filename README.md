@@ -53,7 +53,13 @@ A production-ready, highly available, and secure 3-Tier Web Architecture on AWS 
       │  │   - Zero Internet Route (Isolated Table)   │  │
       │  └────────────────────────────────────────────┘  │
       ====================================================
-3. Directory Structure
+```
+
+---
+
+## 3. Directory Structure
+
+```text
 aws-3tier-architecture-terraform/
 ├── README.md
 ├── vpc.tf                             # Multi-AZ VPC, Subnets, IGW, and Route Tables
@@ -61,8 +67,13 @@ aws-3tier-architecture-terraform/
 └── .github/
     └── workflows/
         └── terraform_ci.yml           # Automated fmt check & validation CI pipeline
+```
 
-4. Verification & Deployment
+---
+
+## 4. Verification & Deployment
+
+```bash
 # Initialize Terraform
 terraform init
 
@@ -72,7 +83,11 @@ terraform validate
 
 # Plan provisioning
 terraform plan
+```
 
-5. SRE & Compliance Takeaways
-・Deterministic Blast Radius: Network segmentation guarantees that a compromise in the public ingress tier cannot reach the database tier directly.
-・Audit-Ready IaC: Complete declarative state ensures reproducibility across staging and production environments without configuration drift.
+---
+
+## 5. SRE & Compliance Takeaways
+
+* **Deterministic Blast Radius**: Network segmentation guarantees that a compromise in the public ingress tier cannot reach the database tier directly.
+* **Audit-Ready IaC**: Complete declarative state ensures reproducibility across staging and production environments without configuration drift.
